@@ -105,7 +105,7 @@
   .plate-block{display:flex;align-items:baseline;gap:9px;margin-top:6px;flex-wrap:wrap;}
   .plate{font-family:'Space Mono',monospace;font-weight:700;font-size:18px;letter-spacing:.03em;background:linear-gradient(180deg,var(--bg-card-hi),var(--bg-card));border:1px solid var(--line);padding:2px 8px;border-radius:6px;display:inline-block;width:fit-content;flex-shrink:0;}
   .plate.reboque{font-size:11.5px;color:var(--text-muted);font-weight:400;background:none;border:none;padding:0 2px;}
-  .status-badge{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:999px;white-space:nowrap;flex-shrink:0;}
+  .status-badge{font-size:10px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 9px;border-radius:999px;white-space:nowrap;flex-shrink:0;overflow:hidden;text-overflow:ellipsis;max-width:150px;}
   .st-vazio{background:var(--gray-soft);color:var(--gray);}
   .st-transito{background:var(--blue-soft);color:var(--blue);}
   .st-aguardando{background:var(--gold-soft);color:var(--gold);}
@@ -251,18 +251,19 @@
   .pres-select{background:var(--bg-card);border:1px solid var(--line);color:var(--text-primary);padding:9px 12px;border-radius:9px;font-size:12px;font-family:'Poppins',sans-serif;max-width:250px;}
   .pres-body{flex:1;display:grid;grid-template-columns:1fr 1.15fr;gap:16px;min-height:0;padding-top:4px;}
   #map{border-radius:16px;overflow:hidden;border:1px solid var(--line);min-height:0;background:var(--bg-panel);}
-  .pres-card{background:var(--bg-panel);border:1px solid var(--line);border-radius:16px;padding:16px 20px;display:flex;flex-direction:column;gap:11px;overflow-y:auto;min-height:0;}
+  .pres-card{background:var(--bg-panel);border:1px solid var(--line);border-radius:16px;padding:14px 20px;display:flex;flex-direction:column;gap:9px;overflow-y:auto;min-height:0;}
 
   /* topo: placa + status + motorista */
   .pres-top-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;}
   .pres-meta{font-size:11px;color:var(--text-dim);font-family:'Space Mono',monospace;letter-spacing:.04em;text-transform:uppercase;}
-  .pres-plate-block{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:5px;}
-  .pres-plate{font-family:'Space Mono',monospace;font-weight:700;font-size:30px;background:linear-gradient(180deg,var(--bg-card-hi),var(--bg-card));border:1px solid var(--line);padding:5px 14px;border-radius:10px;}
-  .pres-status-badge{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 13px;border-radius:999px;}
-  .pres-reboque{font-size:12.5px;color:var(--text-muted);margin-top:5px;}
+  .pres-plate-block{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:5px;}
+  .pres-plate{font-family:'Space Mono',monospace;font-weight:700;font-size:28px;background:linear-gradient(180deg,var(--bg-card-hi),var(--bg-card));border:1px solid var(--line);padding:4px 14px;border-radius:10px;}
+  .pres-status-badge{font-size:11.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:6px 13px;border-radius:999px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:230px;}
+  .pres-driver-stack{display:flex;flex-direction:column;gap:3px;}
+  .pres-reboque{font-size:11.5px;color:var(--text-muted);}
 
   .pres-driver-inline{display:flex;align-items:center;gap:9px;flex-wrap:wrap;}
-  .pres-driver-name{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;text-transform:uppercase;color:var(--text-primary);}
+  .pres-driver-name{font-family:'Montserrat',sans-serif;font-size:16px;font-weight:800;text-transform:uppercase;color:var(--text-primary);}
   .pres-driver-name.none{color:var(--text-dim);font-weight:400;font-style:italic;text-transform:none;font-size:13px;}
   .chip{display:inline-flex;align-items:center;gap:4px;font-size:9.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:999px;width:fit-content;flex-shrink:0;}
   .chip.ok{background:var(--olive-soft);color:var(--olive);}
@@ -286,12 +287,12 @@
   .status-summary .big{font-family:'Montserrat',sans-serif;font-size:17px;font-weight:800;display:flex;align-items:center;gap:7px;}
   .status-summary .big .dot{width:9px;height:9px;border-radius:50%;}
   .status-summary .cap{font-size:11.5px;color:var(--text-muted);margin-top:2px;}
-  .status-summary .updated{margin-left:auto;font-size:10.5px;color:var(--text-dim);font-family:'Space Mono',monospace;display:flex;align-items:center;gap:6px;text-align:right;}
+  .map-updated-badge{background:rgba(20,15,10,.85);color:#C9B79C;font-size:10.5px;padding:5px 10px;border-radius:6px;font-family:'Space Mono',monospace;box-shadow:0 2px 6px rgba(0,0,0,.4);white-space:nowrap;}
 
   /* pontos de atenção: manutenção (vermelho) + documentos/status ocupacional (âmbar) */
-  .pres-field.alert{background:var(--orange-soft);border-radius:12px;padding:10px 16px;border-top:none;border-left:4px solid var(--orange);margin-top:0;}
-  .pres-field.alert .l{font-family:'Montserrat',sans-serif;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#F0938E;font-weight:700;margin-bottom:5px;}
-  .pres-field.alert .v{font-size:14px;line-height:1.4;color:var(--text-primary);}
+  .pres-field.alert{background:var(--orange-soft);border-radius:11px;padding:8px 14px;border-top:none;border-left:4px solid var(--orange);margin-top:0;}
+  .pres-field.alert .l{font-family:'Montserrat',sans-serif;font-size:10px;letter-spacing:.07em;text-transform:uppercase;color:#F0938E;font-weight:700;margin-bottom:3px;}
+  .pres-field.alert .v{font-size:13px;line-height:1.32;color:var(--text-primary);}
   .pres-field.alert.warn{background:var(--gold-soft);border-left-color:var(--gold);}
   .pres-field.alert.warn .l{color:var(--gold);}
 
@@ -573,7 +574,7 @@ let CLIENT_MARKERS = loadClientMarkers();
 let PAGE_SIZE = 8;
 let TRANSITION_SECONDS = 10;
 let SLIDE_MS = TRANSITION_SECONDS * 1000;
-const REFRESH_MS = 60000;
+const REFRESH_MS = 300000; // 5 minutos — verifica a planilha sem interromper a apresentação com tanta frequência
 /* Calcula um layout de grade razoável (colunas x linhas) para qualquer quantidade de cards,
    mirando uma proporção próxima de 16:9 (tela de TV) */
 function computeGridLayout(n){
@@ -628,7 +629,7 @@ function statusInfo(item){
   if(s.includes('TRANSITO')) return {label:'Em trânsito', cls:'st-transito', stage:2};
   if(s.includes('CARREGAMENTO')) return {label:'Aguardando carga', cls:'st-aguardando', stage:1};
   if(s.includes('VAZIO')) return {label:'Vazio', cls:'st-vazio', stage:1};
-  if(raw) return {label: raw.length>22 ? raw.slice(0,22)+'…' : raw, cls:'st-outro', stage:2};
+  if(raw) return {label: raw, cls:'st-outro', stage:2};
   if(item.cavalo) return {label:'Sem status', cls:'st-outro', stage:null};
   return {label:'Reboque disponível', cls:'st-vazio', stage:null};
 }
@@ -1080,7 +1081,7 @@ function refreshAll(){
   if(current >= PAGES.length) current = 0;
   updateStats();
   render();
-  populatePresentationSelectors();
+  populatePresentationSelectors(true);
 }
 
 /* ======================= RELÓGIO E CLIMA ======================= */
@@ -1175,7 +1176,7 @@ document.getElementById('navPresent').onclick = ()=>{
   presentation.classList.add('show');
   document.getElementById('presAutoCheckbox').checked = false;
   stopAutoApresentacao();
-  populatePresentationSelectors();
+  populatePresentationSelectors(false);
   setTimeout(()=>{ ensureMap(); leafletMap && leafletMap.invalidateSize(); }, 80);
 };
 
@@ -1575,6 +1576,19 @@ function ensureMap(){
   addBaseLayers(leafletMap);
   L.marker(HQ_COORD, {icon:hqIcon, zIndexOffset:900}).addTo(leafletMap).bindPopup('<b>🏠 Sede Rodo Riva Transportes</b><br>Foz do Iguaçu — PR');
   plotClientMarkers(leafletMap, clientMarkersPres);
+
+  const updatedControl = L.control({position:'bottomleft'});
+  updatedControl.onAdd = function(){
+    const div = L.DomUtil.create('div', 'map-updated-badge');
+    div.id = 'mapUpdatedBadge';
+    return div;
+  };
+  updatedControl.addTo(leafletMap);
+  updateMapBadge();
+}
+function updateMapBadge(){
+  const el = document.getElementById('mapUpdatedBadge');
+  if(el) el.innerHTML = `🕒 Painel atualizado às ${lastRefreshTime.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}`;
 }
 function fmtDuracao(seg){ const h=Math.floor(seg/3600), m=Math.round((seg%3600)/60); return h>0 ? `${h}h ${m}m` : `${m}m`; }
 const CHEGOU_KM = 3; // abaixo disso, considera "chegou ao destino" em vez de mostrar 0.x km
@@ -1637,13 +1651,16 @@ function updateRotaBar(state, data){
   if(el) el.outerHTML = rotaBarHTML(state, data);
 }
 
-function populatePresentationSelectors(){
+function populatePresentationSelectors(preserveCurrent){
   const sel = document.getElementById('presTipoFilter');
   const order = tipoOrder(vehiclesOnly());
   sel.innerHTML = `<option value="__ALL__">Todos os tipos</option>` + order.map(t=>`<option value="${t}">${t}</option>`).join('');
-  buildVehicleSelect();
+  buildVehicleSelect(preserveCurrent);
 }
-function buildVehicleSelect(){
+function presItemKey(d){
+  return d.type==='cargo' ? ('cargo:'+d.tipo) : ('v:'+(d.cavalo||'')+'|'+(d.reboque||''));
+}
+function buildVehicleSelect(preserveCurrent){
   const filter = document.getElementById('presTipoFilter').value || '__ALL__';
   const veiculos = vehiclesOnly();
   const vehicles = filter==='__ALL__' ? veiculos.slice() : veiculos.filter(d=>d.tipo===filter);
@@ -1653,16 +1670,27 @@ function buildVehicleSelect(){
     const entries = CARGO_DATA.filter(d=>d.tipo===tipo);
     if(entries.length) cargoSlides.push({type:'cargo', tipo, items:entries});
   });
+
+  // ao atualizar em segundo plano (ex: verificação automática da planilha), mantém o
+  // mesmo veículo que estava sendo exibido em vez de sempre voltar pro primeiro item
+  let novoIndex = 0;
+  if(preserveCurrent && presList.length && presList[presIndex]){
+    const chaveAtual = presItemKey(presList[presIndex]);
+    const novaLista = vehicles.concat(cargoSlides);
+    const idx = novaLista.findIndex(d => presItemKey(d) === chaveAtual);
+    if(idx >= 0) novoIndex = idx;
+  }
+
   presList = vehicles.concat(cargoSlides);
   const vSel = document.getElementById('presVehicleSelect');
   vSel.innerHTML = presList.map((d,i)=>{
     if(d.type==='cargo') return `<option value="${i}">📦 Cargas — ${d.tipo}</option>`;
     return `<option value="${i}">${d.tipo} · ${d.cavalo||d.reboque||'sem placa'}${d.motorista?' · '+d.motorista:''}</option>`;
   }).join('');
-  presIndex = 0;
-  if(presList.length) renderPresentation();
+  presIndex = novoIndex;
+  if(presList.length && presentation.classList.contains('show')) renderPresentation();
 }
-document.getElementById('presTipoFilter').onchange = buildVehicleSelect;
+document.getElementById('presTipoFilter').onchange = ()=> buildVehicleSelect(false);
 document.getElementById('presVehicleSelect').onchange = (e)=>{ presIndex = Number(e.target.value); renderPresentation(); if(presAutoTimer) startAutoApresentacao(); };
 document.getElementById('presAutoCheckbox').onchange = (e)=>{ if(e.target.checked) startAutoApresentacao(); else stopAutoApresentacao(); };
 
@@ -1742,6 +1770,7 @@ async function renderPresentation(){
   document.getElementById('presVehicleSelect').value = presIndex;
 
   ensureMap();
+  updateMapBadge();
   if(leafletMarker){ leafletMarker.remove(); leafletMarker=null; }
   if(leafletDestMarker){ leafletDestMarker.remove(); leafletDestMarker=null; }
   if(routingControl){ try{ leafletMap.removeControl(routingControl); }catch(e){} routingControl=null; }
@@ -1764,12 +1793,14 @@ async function renderPresentation(){
         <div class="pres-meta">${item.tipo}${item.idx?' · Nº '+item.idx:''}</div>
         <div class="pres-plate-block">
           <div class="pres-plate">${item.cavalo || 'SEM CAVALO'}</div>
-          <div class="pres-driver-inline">
-            <span class="pres-driver-name ${item.motorista?'':'none'}">${item.motorista || 'motorista não atribuído'}</span>
-            ${chip ? `<span class="chip ${chip.cls}">${chip.label}</span>` : ''}
+          <div class="pres-driver-stack">
+            <div class="pres-driver-inline">
+              <span class="pres-driver-name ${item.motorista?'':'none'}">${item.motorista || 'motorista não atribuído'}</span>
+              ${chip ? `<span class="chip ${chip.cls}">${chip.label}</span>` : ''}
+            </div>
+            ${item.reboque ? `<div class="pres-reboque">Reboque ${item.reboque}</div>` : ''}
           </div>
         </div>
-        ${item.reboque ? `<div class="pres-reboque">Reboque ${item.reboque}</div>` : ''}
       </div>
       <span class="pres-status-badge ${st.cls}">${st.label}</span>
     </div>
@@ -1787,7 +1818,6 @@ async function renderPresentation(){
         <div class="big"><span class="dot" style="background:${STATUS_DOT_COLOR[st.cls]||'var(--gray)'};"></span>${st.label}</div>
         <div class="cap">${STATUS_CAPTIONS[st.stage] || ''}</div>
       </div>
-      <div class="updated">🕒 Painel atualizado às<br>${lastRefreshTime.toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})}</div>
     </div>
 
     <div class="senha-rota-row">
@@ -1873,7 +1903,7 @@ function openPresentationFor(item){
   document.getElementById('presTipoFilter').value = '__ALL__';
   document.getElementById('presAutoCheckbox').checked = false;
   stopAutoApresentacao();
-  buildVehicleSelect();
+  buildVehicleSelect(false);
   const idx = presList.indexOf(item);
   if(idx >= 0) presIndex = idx;
   setTimeout(()=>{ ensureMap(); leafletMap && leafletMap.invalidateSize(); renderPresentation(); }, 80);
